@@ -13,13 +13,14 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f8ff;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
-header, main, footer {
-    padding: 20px;
-}
+ header, main, footer, nav {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+    }
 
 header {
     background-color:#c0dedc;
@@ -48,8 +49,7 @@ header {
 /* Landscape and larger screens */
 @media (orientation: landscape) and (min-width: 768px) {
     header {
-        background-size: cover;
-        background-position: center;
+        background-size: 100% auto;
         background-attachment: fixed;
     }
 }
