@@ -7,9 +7,12 @@
     <title>Dr. Archit K. Mehta - Homoeopathic Psychiatric Clinic</title>
      <style>
 /* Adjust main container widths */
-body {
-    max-width: 100%;
-    overflow-x: hidden;
+body body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
 }
 
 header, main, footer {
@@ -17,7 +20,54 @@ header, main, footer {
     width: 100%;
     box-sizing: border-box;
 }
+header {
+    background-color:#c0dedc;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-image: url('https://i.pinimg.com/736x/e4/45/b5/e445b559f523edc7ef5dcfcdcbd3ab1f.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
 
+/* Default for mobile (portrait) */
+@media (orientation: portrait) {
+    header {
+        background-size: auto 100%;
+    }
+}
+
+/* Landscape and larger screens */
+@media (orientation: landscape) and (min-width: 768px) {
+    header {
+        background-size: 100% auto;
+        background-attachment: fixed;
+    }
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+}
+@media (max-width: 768px) {
+    header {
+        background-image: url('https://i.pinimg.com/736x/df/a3/d2/dfa3d2f0281b21aca1853ebf6661918b.jpg'); /* Use a mobile-friendly image */
+        background-attachment: scroll;
+    }
+}
 /* Ensure full-width sections */
 section {
     width: 100%;
