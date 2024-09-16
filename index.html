@@ -6,158 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Archit K. Mehta - Homoeopathic Psychiatric Clinic</title>
      <style>
-/* Global styles */
+/* Adjust main container widths */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f8ff;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 header, main, footer {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* Responsive header */
-header {
-    background-color: #c0dedc;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    background-image: url('https://i.pinimg.com/736x/e4/45/b5/e445b559f523edc7ef5dcfcdcbd3ab1f.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-}
-
-/* Responsive navigation */
-nav {
-    background-color: #4169e1;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display: inline-block;
-}
-
-/* Responsive sections */
+/* Ensure full-width sections */
 section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 20px;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
 }
 
-/* Responsive images */
+/* Adjust article grid for full width */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* Ensure images don't overflow */
 img {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto;
 }
 
-/* Responsive grid for articles */
-.article-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Responsive appointment buttons */
-.appointment-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.appointment-button {
-    flex: 1 1 200px;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 10px;
-}
-
-/* Responsive iframe for map */
-.map-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-}
-
-.map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Adjust map container for full width */
+#address iframe {
     width: 100%;
-    height: 100%;
+    height: 450px;
     border: 0;
 }
 
-/* Media queries for smaller screens */
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+    header, main, footer {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .article-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Ensure navigation uses full width */
+nav {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Adjust appointment buttons for better spacing */
+.appointment-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.appointment-button {
+    flex: 1;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    nav {
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    nav a {
-        display: inline-block;
-        padding: 10px 5px;
-    }
-
     .appointment-buttons {
         flex-direction: column;
     }
 
     .appointment-button {
-        margin: 10px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        height: 70vh;
-    }
-
-    h1, h2 {
-        font-size: 1.5em;
-    }
-
-    .article-grid {
-        grid-template-columns: 1fr;
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
     </style>
