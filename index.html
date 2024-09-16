@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Archit K. Mehta - Homoeopathic Psychiatric Clinic</title>
      <style>
-/* Adjust main container widths */
-body body {
+
+/* Global styles */
+body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f0f8ff;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 header, main, footer {
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 20px;
 }
+
 header {
     background-color:#c0dedc;
     color: white;
@@ -68,73 +69,272 @@ header img {
         background-attachment: scroll;
     }
 }
-/* Ensure full-width sections */
-section {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-}
 
-/* Adjust article grid for full width */
-.article-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    width: 100%;
-}
-
-/* Ensure images don't overflow */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Adjust map container for full width */
-#address iframe {
-    width: 100%;
-    height: 450px;
-    border: 0;
-}
-
-/* Media query for larger screens */
-@media (min-width: 1200px) {
-    header, main, footer {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .article-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Ensure navigation uses full width */
 nav {
-    width: 100%;
-    box-sizing: border-box;
+    background-color: #4169e1;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
 
-/* Adjust appointment buttons for better spacing */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+nav {
+  position: sticky;
+  top: 0;
+  background-color: transparent; /* Initial background color */
+  width: 100%;
+  z-index: 1000; /* Ensures the nav stays above other content */
+  transition: background-color 0.3s ease; /* Smooth transition for scroll effect */
+}
+
+.scrolled {
+  background-color:#4b4b4b; /* Background color when scrolled */
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0000cd;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #00008b;
+}
+
+h2 {
+    color: #1e90ff;
+}
+
+/* Section styling */
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+/* Appointment Section */
+#appointment {
+    text-align: center;
+}
+
 .appointment-buttons {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    gap: 20px;
+    margin-top: 20px;
 }
 
 .appointment-button {
     flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Responsive adjustments */
+.book-appointment {
+    background-color: #0000cd;
+    color: white;
+    margin-right: 10px;
+}
+
+.book-appointment:hover {
+    background-color: #00008b;
+}
+
+.tele-consultation {
+    background-color: #1e90ff;
+    color: white;
+    margin-left: 10px;
+}
+
+.tele-consultation:hover {
+    background-color: #1c86ee;
+}
+
+/* Dynamic Image Sizing */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Service Section Highlighting */
+.service-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.service-section h3 {
+    color: #1e90ff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Highlighting Homeopathy and Psychiatry */
+.service-section .highlight-homeopathy,
+.service-section .highlight-psychiatry {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.service-section .highlight-homeopathy:hover,
+.service-section .highlight-psychiatry:hover {
+    background-color: #d1e7ff;
+}
+
+.service-section .highlight-homeopathy h3,
+.service-section .highlight-psychiatry h3 {
+    color: #1e90ff;
+}
+
+/* Articles Section */
+#mental-health-articles, #publications {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.article-card {
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.article-card h3 {
+    color: #1e90ff;
+    margin-top: 0;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #4169e1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Fade-in effect */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    
+    /* Add these properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-to-top:hover {
+    background-color: #0000cd;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
     .appointment-buttons {
         flex-direction: column;
     }
-
     .appointment-button {
-        width: 100%;
-        margin-bottom: 10px;
+        margin: 10px 0;
+    }
+    .book-appointment {
+        margin-right: 0;
+    }
+    .tele-consultation {
+        margin-left: 0;
     }
 }
     </style>
